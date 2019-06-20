@@ -12,7 +12,7 @@ server.get('/', async (req, res) => {
   try {
     const shoutouts = await db('shoutouts');
     const messageOfTheDay = process.env.MOTD || "Hello Ya'll";
-    res.status(200).json({ motd: messageOfTheDay, shoutours });
+    res.status(200).json({ motd: messageOfTheDay, shoutouts });
   } catch (error) {
     console.error('\nERROR', error);
     res.status(500).json({ error: 'Cannot retrieve the shoutouts' });
